@@ -32,6 +32,7 @@ public class QuizActivity extends ActionBarActivity {
     private int mCurrentIndex = 0;
 
     private void updateQuestion() {
+        //Log.d(TAG, "Updating question text for question #" + mCurrentIndex, new Exception());
         int question = mQuestionBank[mCurrentIndex].getQuestion();
         mQuestionTextView.setText(question);
     }
@@ -55,8 +56,6 @@ public class QuizActivity extends ActionBarActivity {
         setContentView(R.layout.activity_quiz);
 
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
-        int question = mQuestionBank[mCurrentIndex].getQuestion();
-        mQuestionTextView.setText(question);
 
         mTrueButton = (Button)findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
