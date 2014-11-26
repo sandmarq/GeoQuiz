@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="true_button">Vrai</string>
+    <string name="false_button">Faux</string>
+    <string name="next_button">Suivante</string>
+    <string name="correct_toast">Correcte!</string>
+    <string name="incorrect_toast">Incorrecte!</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="question_oceans">L\'océan Pacifique est plus grand que l\'océan Atlantique.</string>
+    <string name="question_mideast">Le canal de Suez relie la Mer Rouge et l\'Océan Indien.</string>
+    <string name="question_africa">La source du Nil est en Égypte.</string>
+    <string name="question_americas">Le fleuve Amazone est le fleuve le plus long dans des Amériques.</string>
+    <string name="question_asia">Lac Baïkal est le plus ancien et le plus profond lac d\'eau douce du monde.</string>
+
+    <string name="cheat_button">Tricher!</string>
+    <string name="warning_text">Êtes-vous sûr de vouloir faire cela?</string>
+    <string name="show_answer_button">Voir la réponse</string>
+    <string name="judgment_toast">La tricherie est mauvaise.</string>
+    <string name="incorrect_judgement_toast">Vous ne trichez pas très bien. \nEssayez de deviner.</string>
+
+</resources>
