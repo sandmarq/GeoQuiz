@@ -11,10 +11,9 @@ import android.widget.TextView;
  * Created by SANDRINE.MARQUIS on 2014-11-25.
  */
 public class CheatActivity extends Activity {
-    private static final String TAG = "CheatActivity";
     public static final String EXTRA_ANSWER_IS_TRUE = "tfquiz.ANSWER_IS_TRUE";
     public static final String EXTRA_ANSWER_SHOWN = "tfquiz.ANSWER_SHOWN";
-
+    private static final String TAG = "CheatActivity";
     private boolean mAnswerIsTrue;
 
     private TextView mAnswerTextView;
