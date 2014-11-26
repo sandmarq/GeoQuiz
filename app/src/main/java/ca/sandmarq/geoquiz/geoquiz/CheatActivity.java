@@ -11,8 +11,9 @@ import android.widget.TextView;
  * Created by SANDRINE.MARQUIS on 2014-11-25.
  */
 public class CheatActivity extends Activity {
-    public static final String EXTRA_ANSWER_IS_TRUE = "ca.sandmarq.geoquiz.answer_is_true";
-    public static final String EXTRA_ANSWER_SHOWN = "ca.sandmarq.geoquiz.answer_shown";
+    private static final String TAG = "CheatActivity";
+    public static final String EXTRA_ANSWER_IS_TRUE = "tfquiz.ANSWER_IS_TRUE";
+    public static final String EXTRA_ANSWER_SHOWN = "tfquiz.ANSWER_SHOWN";
 
     private boolean mAnswerIsTrue;
 
@@ -30,9 +31,13 @@ public class CheatActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
 
-        // Answer will not be shown until the user
-        // presses the button
-        setAnswerShownResult(false);
+        if (savedInstanceState == null) {
+            // first startup, so the answer must not
+            // be shown yet
+            setAnswerShownResult(false);
+        }
+
+        mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
 
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
 
@@ -45,6 +50,7 @@ public class CheatActivity extends Activity {
                 } else {
                     mAnswerTextView.setText(R.string.false_button);
                 }
+                setAnswerShownResult(true);
             }
         });
     }

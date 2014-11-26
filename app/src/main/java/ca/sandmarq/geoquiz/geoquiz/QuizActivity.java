@@ -47,7 +47,11 @@ public class QuizActivity extends ActionBarActivity {
         int messageResId = 0;
 
         if (mIsCheater) {
-            messageResId = R.string.judgment_toast;
+            if (userPressedTrue == answerIsTrue) {
+                messageResId = R.string.judgment_toast;
+            } else {
+                messageResId = R.string.incorrect_judgement_toast;
+            }
         } else {
             if (userPressedTrue == answerIsTrue) {
                 messageResId = R.string.correct_toast;
@@ -55,15 +59,11 @@ public class QuizActivity extends ActionBarActivity {
                 messageResId = R.string.incorrect_toast;
             }
         }
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-                .show();
+        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (data == null) {
-            return;
-        }
         mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
     }
 
@@ -72,6 +72,8 @@ public class QuizActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle) called");
         setContentView(R.layout.activity_quiz);
+
+        mIsCheater = false;
 
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
 
